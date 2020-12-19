@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.ssm.dao.ProductDao">
+
+
+    <select id="queryAll" resultType="com.qf.ssm.pojo.Product">
+        select * from product
+    </select>
+    <select id="queryByprice" resultType="com.qf.ssm.pojo.Product">
+        select * from product order by pmoney desc
+    </select>
+    <select id="productsOrderBySaleTimes" resultType="com.qf.ssm.pojo.Product">
+        select * from product order by saletimes desc
+    </select>
+    <select id="queryByInput" resultType="com.qf.ssm.pojo.Product">
+        select * from product where pname like concat("%",#{name},"%")
+    </select>
+</mapper>
